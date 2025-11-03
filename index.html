@@ -1,0 +1,1814 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorkWing</title>
+    <!-- Degular Font -->
+    <link href="https://api.fontshare.com/v2/css?f[]=degular@400,700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Degular', sans-serif;
+            height: 100vh;
+            overflow: hidden;
+            color: white;
+            transition: background 0.5s ease;
+            --bg-image: none;
+        }
+
+        /* Gradient Backgrounds */
+        .bg-gradient-1 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .bg-gradient-2 {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .bg-gradient-3 {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .bg-gradient-4 {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+
+        .bg-gradient-5 {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        }
+
+        .bg-gradient-6 {
+            background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+        }
+
+        .bg-gradient-7 {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+        }
+
+        .bg-gradient-8 {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+        }
+
+        .bg-gradient-9 {
+            background: linear-gradient(135deg, #6B73FF 0%, #000DFF 100%);
+        }
+
+        .bg-gradient-10 {
+            background: linear-gradient(135deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+        }
+
+        .bg-gradient-11 {
+            background: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+        }
+
+        .bg-gradient-12 {
+            background: linear-gradient(135deg, #3B41C5 0%, #A981BB 49%, #FFC8A9 100%);
+        }
+
+        /* Animated Gradient Backgrounds */
+        .bg-gradient-animated-1 {
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+
+        .bg-gradient-animated-2 {
+            background: linear-gradient(-45deg, #3f51b1, #5a55ae, #7b5fac, #8f6aae);
+            background-size: 400% 400%;
+            animation: gradient 12s ease infinite;
+        }
+
+        .bg-gradient-animated-3 {
+            background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fad0c4, #a18cd1);
+            background-size: 400% 400%;
+            animation: gradient 10s ease infinite;
+        }
+
+        .bg-gradient-animated-4 {
+            background: linear-gradient(-45deg, #667eea, #764ba2, #6B8DD6, #8E37D7);
+            background-size: 400% 400%;
+            animation: gradient 8s ease infinite;
+        }
+
+        .bg-gradient-animated-5 {
+            background: linear-gradient(-45deg, #00dbde, #fc00ff);
+            background-size: 200% 200%;
+            animation: neon-pulse 8s ease infinite;
+        }
+
+        .bg-gradient-animated-6 {
+            background: linear-gradient(45deg, #009FFF, #ec2F4B);
+            background-size: 200% 200%;
+            animation: gradient-rotate 12s ease infinite;
+        }
+
+        .bg-gradient-animated-7 {
+            background: linear-gradient(45deg, #1f4037, #99f2c8);
+            background-size: 200% 200%;
+            animation: breathing 8s ease infinite;
+        }
+
+        .bg-gradient-animated-8 {
+            background: linear-gradient(45deg, #8a2387, #e94057, #f27121);
+            background-size: 300% 300%;
+            animation: tri-fade 15s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @keyframes neon-pulse {
+            0% {
+                background-position: 0% 50%;
+                filter: brightness(0.8);
+            }
+
+            50% {
+                background-position: 100% 50%;
+                filter: brightness(1.2);
+            }
+
+            100% {
+                background-position: 0% 50%;
+                filter: brightness(0.8);
+            }
+        }
+
+        @keyframes gradient-rotate {
+            0% {
+                background-position: 0% 0%;
+                transform: scale(1);
+            }
+
+            50% {
+                background-position: 100% 100%;
+                transform: scale(1.05);
+            }
+
+            100% {
+                background-position: 0% 0%;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes breathing {
+            0% {
+                background-position: 0% 50%;
+                filter: saturate(0.8);
+            }
+
+            50% {
+                background-position: 100% 50%;
+                filter: saturate(1.2);
+            }
+
+            100% {
+                background-position: 0% 50%;
+                filter: saturate(0.8);
+            }
+        }
+
+        @keyframes tri-fade {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            33% {
+                background-position: 50% 100%;
+            }
+
+            66% {
+                background-position: 100% 0%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .bg-custom {
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .bg-custom.fit-cover {
+            background-size: cover;
+        }
+
+        .bg-custom.fit-contain {
+            background-size: contain;
+            background-color: #000;
+        }
+
+        .bg-custom.fit-blur {
+            position: relative;
+            background: none !important;
+        }
+
+        .bg-custom.fit-blur::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: var(--bg-image);
+            background-size: cover;
+            background-position: center;
+            filter: blur(30px) brightness(0.7);
+            transform: scale(1.1);
+            z-index: 0;
+        }
+
+        .bg-custom.fit-blur::after {
+            content: '';
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            height: 90%;
+            background-image: var(--bg-image);
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: 0;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        .background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .video-fit-cover {
+            object-fit: cover;
+            background-color: #000;
+        }
+
+        .video-fit-contain {
+            object-fit: contain;
+            background-color: #000;
+        }
+
+        .video-fit-blur {
+            display: none;
+        }
+
+        /* Ensure videos are properly centered */
+        video {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        /* Improve video background containers */
+        .video-blur-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            background-color: #000;
+        }
+
+        .video-fit-blur+.video-blur-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .video-blur-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            filter: blur(30px) brightness(0.7);
+            transform: scale(1.1);
+            overflow: hidden;
+        }
+
+        .video-blur-background video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-blur-foreground {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            height: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .video-blur-foreground video {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* Idle State */
+        body.idle .stats-section,
+        body.idle .settings-btn,
+        body.idle .quote-section,
+        body.idle .mode-buttons,
+        body.idle .timer-controls {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s ease;
+        }
+
+        body.idle .timer-section {
+            transform: scale(1.2);
+            transition: transform 0.5s ease;
+        }
+
+        body:not(.idle) .stats-section,
+        body:not(.idle) .settings-btn,
+        body:not(.idle) .quote-section,
+        body:not(.idle) .mode-buttons,
+        body:not(.idle) .timer-controls {
+            opacity: 1;
+            pointer-events: auto;
+            transition: opacity 0.5s ease;
+        }
+
+        body:not(.idle) .timer-section {
+            transform: scale(1);
+            transition: transform 0.5s ease;
+        }
+
+        /* Timer Section */
+        .timer-section {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        /* Timer Container and Canvas */
+        .timer-container {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #particleCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* Timer Circle and Progress */
+        .timer-circle {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.2),
+                -20px -20px 60px rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .progress-ring {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: conic-gradient(from 0deg,
+                    rgba(255, 255, 255, 0.3) var(--progress, 0%),
+                    transparent var(--progress, 0%));
+            transition: --progress 0.3s;
+        }
+
+        /* Wave Effects */
+        .wave-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            overflow: hidden;
+            opacity: 0.5;
+        }
+
+        .wave {
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 40%;
+            transform-origin: 50% 48%;
+            animation: drift 5s infinite linear paused;
+        }
+
+        .wave:nth-child(1) {
+            animation-duration: 5s;
+        }
+
+        .wave:nth-child(2) {
+            animation-duration: 7s;
+            opacity: 0.5;
+        }
+
+        .wave:nth-child(3) {
+            animation-duration: 9s;
+            opacity: 0.25;
+        }
+
+        .timer-section.running .wave {
+            animation-play-state: running;
+        }
+
+        @keyframes drift {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Timer Display */
+        .timer-display {
+            font-size: 120px;
+            font-weight: 700;
+            font-family: 'Degular', sans-serif;
+            letter-spacing: 10px;
+            margin: 0;
+            text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Number Pop Effects */
+        #numberPopContainer {
+            position: absolute;
+            pointer-events: none;
+            z-index: 3;
+            right: 20px;
+            top: 20px;
+            width: 100px;
+            height: 100px;
+        }
+
+        @keyframes numberPop {
+            0% {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+
+            30% {
+                opacity: 1;
+                transform: scale(1.1);
+            }
+
+            80% {
+                opacity: 1;
+                transform: scale(0.9);
+            }
+
+            100% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+        }
+
+        .number-pop {
+            position: absolute;
+            opacity: 0;
+            animation: numberPop 0.8s ease-out forwards;
+            z-index: 1000;
+            pointer-events: none;
+            text-align: center;
+            width: 100%;
+            line-height: 1;
+        }
+
+        @keyframes popAndFade {
+            0% {
+                opacity: 0;
+                transform: scale(0) translateY(0);
+            }
+
+            20% {
+                opacity: 1;
+                transform: scale(1.2) translateY(-10px);
+            }
+
+            100% {
+                opacity: 0;
+                transform: scale(1) translateY(-50px);
+            }
+        }
+
+        .timer-label {
+            font-size: 24px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+
+        .timer-controls {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 15px 40px;
+            font-size: 18px;
+            border: 2px solid white;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        /* Mode Buttons */
+        .mode-buttons {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .mode-btn {
+            padding: 10px 25px;
+            font-size: 16px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .mode-btn.active {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: white;
+        }
+
+
+        /* Settings Panel */
+        .settings-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 3;
+            padding: 12px 25px;
+            font-size: 16px;
+            border: 2px solid white;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .settings-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .settings-panel {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(20px);
+            z-index: 4;
+            padding: 40px;
+            transition: right 0.3s ease;
+            overflow-y: auto;
+        }
+
+        .settings-panel.open {
+            right: 0;
+        }
+
+        .settings-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
+            cursor: pointer;
+            color: white;
+        }
+
+        .settings-title {
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+
+        .setting-group {
+            margin-bottom: 30px;
+        }
+
+        .setting-label {
+            font-size: 16px;
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+
+        .setting-input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 10px;
+        }
+
+        .setting-input option {
+            background: #1a1a1a;
+            color: white;
+        }
+
+        .preset-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .preset-tab {
+            padding: 8px 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            flex: 1;
+        }
+
+        .preset-tab:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .preset-tab.active {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: white;
+        }
+
+        .preset-content {
+            display: none;
+        }
+
+        .preset-content.active {
+            display: block;
+        }
+
+        .background-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .bg-option {
+            height: 60px;
+            border-radius: 10px;
+            cursor: pointer;
+            border: 3px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding: 5px;
+        }
+
+        .bg-option:hover {
+            transform: scale(1.05);
+        }
+
+        .bg-option.active {
+            border-color: white;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+
+        .preset-label {
+            font-size: 12px;
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 2px 8px;
+            border-radius: 10px;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+
+        .bg-option:hover .preset-label {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .custom-bg-section {
+            margin-top: 20px;
+        }
+
+        .custom-bg-input {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+
+
+        /* Quote Section removed */
+
+        /* Progress Ring and Timer Container */
+        .timer-container {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            margin: 0 auto;
+            filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.2));
+        }
+
+        .timer-circle {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.2),
+                -20px -20px 60px rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+        }
+
+        /* Wave Effects */
+        .wave-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            overflow: hidden;
+            opacity: 0.5;
+        }
+
+        .wave {
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 40%;
+            transform-origin: 50% 48%;
+            animation: drift 5s infinite linear paused;
+        }
+
+        .wave:nth-child(1) {
+            animation-duration: 5s;
+        }
+
+        .wave:nth-child(2) {
+            animation-duration: 7s;
+            opacity: 0.5;
+        }
+
+        .wave:nth-child(3) {
+            animation-duration: 9s;
+            opacity: 0.25;
+        }
+
+        .timer-section.running .wave {
+            animation-play-state: running;
+        }
+
+        @keyframes drift {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Progress Ring */
+        .progress-ring {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: conic-gradient(from 0deg,
+                    rgba(255, 255, 255, 0.3) var(--progress, 0%),
+                    transparent var(--progress, 0%));
+            transition: --progress 0.3s;
+        }
+
+        .progress-ring circle {
+            fill: none;
+            stroke-linecap: round;
+        }
+
+        .timer-display {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 100px;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 2;
+            transition: transform 0.3s ease;
+        }
+
+        /* Timer running animations */
+        body:not(.idle) .timer-section.running .progress {
+            filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.7));
+        }
+
+        body:not(.idle) .timer-section.running .particles {
+            animation: particleFlow 2s linear infinite;
+            opacity: 0.5;
+        }
+
+        body:not(.idle) .timer-section.running .glow {
+            animation: glowPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes particleFlow {
+            0% {
+                stroke-dashoffset: 0;
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 0.5;
+            }
+
+            100% {
+                stroke-dashoffset: -1256;
+                opacity: 0;
+            }
+        }
+
+        @keyframes glowPulse {
+
+            0%,
+            100% {
+                opacity: 0.3;
+                filter: blur(8px);
+            }
+
+            50% {
+                opacity: 0.6;
+                filter: blur(12px);
+            }
+        }
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .timer-display {
+                font-size: 80px;
+            }
+
+            .settings-panel {
+                width: 100%;
+                right: -100%;
+            }
+
+            .stats-section {
+                position: static;
+                margin: 20px auto;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-1">
+    <div class="overlay"></div>
+
+    <div class="container">
+        <!-- Settings Button -->
+        <button class="settings-btn" onclick="toggleSettings()">⚙ Settings</button>
+
+        <!-- Timer Section -->
+        <div class="timer-section">
+            <div class="timer-label" id="timerLabel">FOCUS TIME</div>
+
+            <div class="timer-container">
+                <canvas id="particleCanvas"></canvas>
+                <div class="timer-display" id="timerDisplay">00:00</div>
+                <div id="numberPopContainer"></div>
+            </div>
+
+            <div class="timer-controls">
+                <button class="btn" id="startBtn" onclick="toggleTimer()">Start</button>
+                <button class="btn" onclick="resetTimer()">Reset</button>
+            </div>
+        </div>
+
+        <!-- Quote Section removed -->
+    </div>
+
+    <!-- Settings Panel -->
+    <div class="settings-panel" id="settingsPanel">
+        <span class="settings-close" onclick="toggleSettings()">×</span>
+        <div class="settings-title">⚙ Settings</div>
+
+        <div class="setting-group">
+            <div class="setting-label">Timer Mode</div>
+            <select class="setting-input" id="timerMode" onchange="changeTimerMode()">
+                <option value="stopwatch">Stopwatch (Count Up)</option>
+                <option value="countdown">Countdown Timer</option>
+            </select>
+        </div>
+
+        <div class="setting-group" id="countdownSettings" style="display: none;">
+            <div class="setting-label">Countdown Duration (minutes)</div>
+            <input type="number" class="setting-input" id="countdownDuration" value="25" min="1" max="180"
+                onchange="updateDurations()">
+        </div>
+
+        <div class="setting-group">
+            <div class="setting-label">Background Theme</div>
+            <div class="preset-tabs">
+                <button class="preset-tab active" onclick="switchPresetTab('static')">Static</button>
+                <button class="preset-tab" onclick="switchPresetTab('animated')">Animated</button>
+            </div>
+
+            <div id="staticPresets" class="preset-content active">
+                <div class="background-grid">
+                    <div class="bg-option bg-gradient-1 active" onclick="changeBackground('bg-gradient-1')"></div>
+                    <div class="bg-option bg-gradient-2" onclick="changeBackground('bg-gradient-2')"></div>
+                    <div class="bg-option bg-gradient-3" onclick="changeBackground('bg-gradient-3')"></div>
+                    <div class="bg-option bg-gradient-4" onclick="changeBackground('bg-gradient-4')"></div>
+                    <div class="bg-option bg-gradient-5" onclick="changeBackground('bg-gradient-5')"></div>
+                    <div class="bg-option bg-gradient-6" onclick="changeBackground('bg-gradient-6')"></div>
+                    <div class="bg-option bg-gradient-7" onclick="changeBackground('bg-gradient-7')"></div>
+                    <div class="bg-option bg-gradient-8" onclick="changeBackground('bg-gradient-8')"></div>
+                    <div class="bg-option bg-gradient-9" onclick="changeBackground('bg-gradient-9')"></div>
+                    <div class="bg-option bg-gradient-10" onclick="changeBackground('bg-gradient-10')"></div>
+                    <div class="bg-option bg-gradient-11" onclick="changeBackground('bg-gradient-11')"></div>
+                    <div class="bg-option bg-gradient-12" onclick="changeBackground('bg-gradient-12')"></div>
+                </div>
+            </div>
+
+            <div id="animatedPresets" class="preset-content">
+                <div class="background-grid">
+                    <div class="bg-option bg-gradient-animated-1" onclick="changeBackground('bg-gradient-animated-1')">
+                        <span class="preset-label">Aurora</span>
+                    </div>
+                    <div class="bg-option bg-gradient-animated-2" onclick="changeBackground('bg-gradient-animated-2')">
+                        <span class="preset-label">Twilight</span>
+                    </div>
+                    <div class="bg-option bg-gradient-animated-3" onclick="changeBackground('bg-gradient-animated-3')">
+                        <span class="preset-label">Dawn</span>
+                    </div>
+                    <div class="bg-option bg-gradient-animated-4" onclick="changeBackground('bg-gradient-animated-4')">
+                        <span class="preset-label">Dusk</span>
+                    </div>
+                    <div class="bg-option bg-gradient-animated-5" onclick="changeBackground('bg-gradient-animated-5')">
+                        <span class="preset-label">Neon</span>
+                    </div>
+                    <div class="bg-option bg-gradient-animated-6" onclick="changeBackground('bg-gradient-animated-6')">
+                        <span class="preset-label">Ocean</span>
+                    </div>
+                    <div class="bg-option bg-gradient-animated-7" onclick="changeBackground('bg-gradient-animated-7')">
+                        <span class="preset-label">Forest</span>
+                    </div>
+                    <div class="bg-option bg-gradient-animated-8" onclick="changeBackground('bg-gradient-animated-8')">
+                        <span class="preset-label">Sunset</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="custom-bg-section">
+                <div class="setting-label">Media Type</div>
+                <select class="setting-input" id="mediaType" onchange="updateMediaOptions()">
+                    <option value="image">Image/GIF</option>
+                    <option value="video">Video</option>
+                </select>
+
+                <div id="imageOptions" class="setting-group">
+                    <div class="setting-label">Image Fit</div>
+                    <select class="setting-input" id="imageFitMode">
+                        <option value="cover">Cover (Fill)</option>
+                        <option value="contain">Contain (Fit)</option>
+                        <option value="blur">Blur Background</option>
+                    </select>
+                </div>
+
+                <div id="videoOptions" class="setting-group" style="display: none;">
+                    <div class="setting-label">Video Fit</div>
+                    <select class="setting-input" id="videoFitMode">
+                        <option value="cover">Cover (Fill)</option>
+                        <option value="contain">Contain (Fit)</option>
+                        <option value="blur">Blur Background</option>
+                    </select>
+                    <div style="margin-top: 10px;">
+                        <label style="display: flex; align-items: center; margin-bottom: 8px;">
+                            <input type="checkbox" id="videoMuted" checked style="margin-right: 8px;"> Muted
+                        </label>
+                        <label style="display: flex; align-items: center;">
+                            <input type="checkbox" id="videoLoop" checked style="margin-right: 8px;"> Loop
+                        </label>
+                    </div>
+                </div>
+
+                <input type="text" class="custom-bg-input" id="customBgInput" style="margin-top:20px;"
+                    placeholder="Add background URL (image/GIF/video)">
+                <button class="btn" style="width: 100%; margin-top: 10px; padding: 10px;"
+                    onclick="setCustomBackground()">Apply</button>
+            </div>
+        </div>
+
+        <div class="setting-group">
+            <div class="setting-label">Visual Effects</div>
+            <div style="margin-bottom: 15px;">
+                <label style="display: flex; align-items: center; margin-bottom: 8px;">
+                    <input type="checkbox" id="enableParticles" checked style="margin-right: 8px;"> Enable Particles
+                </label>
+                <label style="display: flex; align-items: center;">
+                    <input type="checkbox" id="enableNumberPops" checked style="margin-right: 8px;"> Enable Number
+                    Pop-ups
+                </label>
+            </div>
+
+            <div class="setting-label" style="margin-top: 15px;">Particle Amount</div>
+            <input type="range" class="setting-input" id="particleAmount" min="5" max="30" value="15"
+                style="margin-bottom: 5px;">
+            <div style="display: flex; justify-content: space-between; font-size: 12px; opacity: 0.7;">
+                <span>Less</span>
+                <span>More</span>
+            </div>
+
+            <div class="setting-label" style="margin-top: 15px;">Particle Speed</div>
+            <input type="range" class="setting-input" id="particleSpeed" min="1" max="10" value="6"
+                style="margin-bottom: 5px;">
+            <div style="display: flex; justify-content: space-between; font-size: 12px; opacity: 0.7;">
+                <span>Slower</span>
+                <span>Faster</span>
+            </div>
+
+            <div class="setting-label" style="margin-top: 15px;">Effect Colors</div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                <div>
+                    <label style="font-size: 14px; opacity: 0.8;">Increment (+)</label>
+                    <input type="color" class="setting-input" id="incrementColor" value="#4CAF50">
+                </div>
+                <div>
+                    <label style="font-size: 14px; opacity: 0.8;">Decrement (-)</label>
+                    <input type="color" class="setting-input" id="decrementColor" value="#f44336">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Effect Settings
+        let effectSettings = {
+            enableParticles: true,
+            enableNumberPops: true,
+            particleAmount: 15,
+            particleSpeed: 6,
+            incrementColor: '#4CAF50',
+            decrementColor: '#f44336'
+        };
+        // Idle State
+        let idleTimer;
+        let isIdle = false;
+        const IDLE_TIMEOUT = 5000; // 5 seconds
+
+        function resetIdleTimer() {
+            clearTimeout(idleTimer);
+            if (isIdle) {
+                document.body.classList.remove('idle');
+                isIdle = false;
+            }
+            idleTimer = setTimeout(() => {
+                document.body.classList.add('idle');
+                isIdle = true;
+            }, IDLE_TIMEOUT);
+        }
+
+        // Add idle detection listeners
+        document.addEventListener('mousemove', resetIdleTimer);
+        document.addEventListener('keydown', resetIdleTimer);
+        resetIdleTimer();
+
+        // Particle System
+        class Particle {
+            constructor(x, y, isPositive = true) {
+                this.x = x;
+                this.y = y;
+                this.color = isPositive ? effectSettings.incrementColor : effectSettings.decrementColor;
+                this.size = Math.random() * 4 + 2;
+                this.speedX = (Math.random() - 0.5) * effectSettings.particleSpeed;
+                this.speedY = -(Math.random() * effectSettings.particleSpeed + 2); // Always start moving up
+                this.lifetime = 1;
+                this.opacity = 1;
+            }
+
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                this.speedY += 0.2; // Gravity
+                this.lifetime *= 0.96;
+                this.opacity = this.lifetime;
+                return this.lifetime > 0.01;
+            }
+
+            draw(ctx) {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = `${this.color}${Math.floor(this.opacity * 255).toString(16).padStart(2, '0')}`;
+                ctx.fill();
+            }
+        }
+
+        // Initialize canvas and particles
+        let canvas, ctx, particles = [];
+
+        function initParticles() {
+            canvas = document.getElementById('particleCanvas');
+            ctx = canvas.getContext('2d');
+
+            // Set canvas size
+            function resizeCanvas() {
+                const container = document.querySelector('.timer-container');
+                const rect = container.getBoundingClientRect();
+                canvas.style.width = rect.width + 'px';
+                canvas.style.height = rect.height + 'px';
+                canvas.width = rect.width * window.devicePixelRatio;
+                canvas.height = rect.height * window.devicePixelRatio;
+                ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+            }
+
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+
+            // Start animation loop
+            requestAnimationFrame(updateParticles);
+        }
+
+        function updateParticles() {
+            if (!ctx) return;
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Debug: draw a test circle to verify canvas is working
+            if (particles.length === 0) {
+                ctx.beginPath();
+                ctx.arc(canvas.width / 2, canvas.height / 2, 5, 0, Math.PI * 2);
+                ctx.fillStyle = '#fff';
+                ctx.fill();
+            }
+
+            particles = particles.filter(particle => {
+                const alive = particle.update();
+                if (alive) {
+                    particle.draw(ctx);
+                    console.log('Drawing particle at:', particle.x, particle.y); // Debug log
+                }
+                return alive;
+            });
+
+            requestAnimationFrame(updateParticles);
+        }
+
+        function emitParticles(x, y, count = 20, isPositive = true) {
+            if (!effectSettings.enableParticles) return;
+            const particleCount = Math.min(count, effectSettings.particleAmount);
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle(x, y, isPositive));
+            }
+        }
+
+        function createNumberPop(number) {
+            if (!effectSettings.enableNumberPops) return;
+            const pop = document.createElement('div');
+            pop.className = 'number-pop';
+            pop.textContent = number > 0 ? `+${number}` : number;
+            pop.style.position = 'absolute';
+            pop.style.right = '0';
+            pop.style.top = '0';
+            pop.style.color = number > 0 ? effectSettings.incrementColor : effectSettings.decrementColor;
+            pop.style.fontSize = '36px';
+            pop.style.fontWeight = 'bold';
+            pop.style.textShadow = '0 0 10px rgba(255, 255, 255, 0.7)';
+            pop.style.fontFamily = 'Degular, sans-serif';
+
+            document.getElementById('numberPopContainer').appendChild(pop);
+            setTimeout(() => pop.remove(), 1000);
+        }
+
+        // Timer State
+        let timerInterval = null;
+        let timeElapsed = 0; // seconds (for stopwatch)
+        let timeLeft = 0; // seconds (for countdown)
+        let totalTime = 0; // total countdown time
+        let isRunning = false;
+        let timerMode = 'stopwatch'; // 'stopwatch' or 'countdown'
+        let countdownDuration = 25 * 60; // default 25 minutes
+        let lastDisplayedTime = 0; // Track last displayed time for particle effects
+
+        // Quotes
+        // Quotes removed
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function () {
+            loadSettings();
+            loadEffectSettings();
+            updateDisplay();
+            updateProgress();
+            initParticles();
+            // Quote logic removed
+        });
+
+        // Cleanup for background elements
+        function cleanupBackgrounds() {
+            // Existing cleanup for videos/containers/overlay
+            document.querySelectorAll('.background-video').forEach(video => {
+                try { video.pause(); video.src = ''; video.load(); } catch (e) { }
+                video.remove();
+            });
+            document.querySelectorAll('.video-blur-container').forEach(c => c.remove());
+            document.querySelectorAll('.overlay').forEach(o => o.remove());
+        }
+
+        // local file support removed (drop zone, file input and preview removed)
+
+        // YouTube support removed
+
+
+
+        // Timer Functions
+        function toggleTimer() {
+            if (isRunning) {
+                pauseTimer();
+            } else {
+                startTimer();
+            }
+        }
+
+        function startTimer() {
+            isRunning = true;
+            document.getElementById('startBtn').textContent = 'Pause';
+            document.querySelector('.timer-section').classList.add('running');
+
+            timerInterval = setInterval(() => {
+                if (timerMode === 'stopwatch') {
+                    timeElapsed++;
+                } else {
+                    timeLeft--;
+                    if (timeLeft <= 0) {
+                        timerComplete();
+                        return;
+                    }
+                }
+                updateDisplay();
+                updateProgress();
+            }, 1000);
+        }
+
+        function pauseTimer() {
+            isRunning = false;
+            document.getElementById('startBtn').textContent = 'Resume';
+            document.querySelector('.timer-section').classList.remove('running');
+            clearInterval(timerInterval);
+        }
+
+        function resetTimer() {
+            isRunning = false;
+            clearInterval(timerInterval);
+
+            if (timerMode === 'stopwatch') {
+                timeElapsed = 0;
+            } else if (timerMode === 'countdown') {
+                timeLeft = countdownDuration;
+                totalTime = countdownDuration;
+            }
+
+            document.getElementById('startBtn').textContent = 'Start';
+            updateDisplay();
+            updateProgress();
+        }
+
+        function timerComplete() {
+            pauseTimer();
+            alert('🎉 Timer complete!');
+
+            updateDisplay();
+            updateProgress();
+            document.getElementById('startBtn').textContent = 'Start';
+        }
+
+        function updateDisplay() {
+            let minutes, seconds, currentTime;
+
+            if (timerMode === 'stopwatch') {
+                minutes = Math.floor(timeElapsed / 60);
+                seconds = timeElapsed % 60;
+                currentTime = timeElapsed;
+            } else {
+                minutes = Math.floor(timeLeft / 60);
+                seconds = timeLeft % 60;
+                currentTime = timeLeft;
+            }
+
+            const display = document.getElementById('timerDisplay');
+            display.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+
+            // Create particle effects if time changed
+            if (isRunning && currentTime !== lastDisplayedTime) {
+                const timeDiff = timerMode === 'stopwatch' ? 1 : -1;
+
+                // Number pop effect
+                if (effectSettings.enableNumberPops) {
+                    createNumberPop(timeDiff);
+                }
+
+                // Particle effect
+                if (effectSettings.enableParticles) {
+                    const display = document.getElementById('timerDisplay');
+                    const displayRect = display.getBoundingClientRect();
+                    const centerX = displayRect.left + displayRect.width / 2;
+                    const centerY = displayRect.top + displayRect.height / 2;
+                    const isPositive = timerMode === 'stopwatch';
+                    emitParticles(
+                        centerX,
+                        centerY,
+                        effectSettings.particleAmount,
+                        isPositive
+                    );
+                }
+            }
+
+            lastDisplayedTime = currentTime;
+        }
+
+        function updateProgress() {
+            let progress;
+
+            if (timerMode === 'stopwatch') {
+                // For stopwatch, fill the circle as time progresses (max 60 minutes)
+                const maxTime = 60 * 60; // 60 minutes
+                progress = Math.min((timeElapsed / maxTime) * 100, 100);
+            } else {
+                // For countdown, deplete the circle
+                progress = totalTime > 0 ? (timeLeft / totalTime) * 100 : 0;
+            }
+
+            const ring = document.querySelector('.progress-ring');
+            ring.style.background = `conic-gradient(
+                from 0deg,
+                rgba(255, 255, 255, 0.3) ${progress}%,
+                transparent ${progress}%
+            )`;
+        }
+
+        // Settings Functions
+        function toggleSettings() {
+            document.getElementById('settingsPanel').classList.toggle('open');
+        }
+
+        function updateDurations() {
+            if (timerMode === 'countdown') {
+                countdownDuration = parseInt(document.getElementById('countdownDuration').value) * 60;
+                timeLeft = countdownDuration;
+                totalTime = countdownDuration;
+
+                updateDisplay();
+                updateProgress();
+                saveSettings();
+            }
+        }
+
+        function changeTimerMode() {
+            if (isRunning) {
+                if (!confirm('Timer is running. Change mode?')) {
+                    document.getElementById('timerMode').value = timerMode;
+                    return;
+                }
+                pauseTimer();
+            }
+
+            timerMode = document.getElementById('timerMode').value;
+
+            // Hide all mode-specific settings
+            document.getElementById('countdownSettings').style.display = 'none';
+
+            if (timerMode === 'countdown') {
+                document.getElementById('countdownSettings').style.display = 'block';
+                document.getElementById('timerLabel').textContent = 'COUNTDOWN TIMER';
+            } else {
+                document.getElementById('timerLabel').textContent = 'FOCUS TIME';
+            }
+
+            resetTimer();
+            saveSettings();
+        }
+
+        function changeBackground(className) {
+            const body = document.body;
+
+            // Clean up function to remove all background-related elements
+            const cleanup = () => {
+                // Remove videos
+                document.querySelectorAll('.background-video').forEach(video => {
+                    video.pause();
+                    video.src = '';
+                    video.load();
+                    video.remove();
+                });
+
+                // Remove video containers
+                document.querySelectorAll('.video-blur-container').forEach(container => container.remove());
+
+                // Remove overlay only if not switching to animated gradient
+                if (!className.includes('animated')) {
+                    document.querySelectorAll('.overlay').forEach(overlay => overlay.remove());
+                }
+
+                // Clear custom background input
+                document.getElementById('customBgInput').value = '';
+            };
+
+            // Perform cleanup
+            cleanup();
+
+            // Clear all existing classes and styles
+            body.className = '';
+            body.style.backgroundImage = '';
+            body.style.removeProperty('--bg-image');
+
+            // Add the new gradient class
+            body.className = className;
+
+            // Update active state in the UI
+            document.querySelectorAll('.bg-option').forEach(opt => {
+                if (opt.classList.contains(className)) {
+                    opt.classList.add('active');
+                } else {
+                    opt.classList.remove('active');
+                }
+            });
+
+            // Clear localStorage of custom background settings
+            localStorage.setItem('background', className);
+            localStorage.removeItem('customBg');
+            localStorage.removeItem('imageFitMode');
+            localStorage.removeItem('videoFitMode');
+            localStorage.removeItem('videoMuted');
+            localStorage.removeItem('videoLoop');
+        }
+
+        function updateMediaOptions() {
+            const mediaType = document.getElementById('mediaType').value;
+            document.getElementById('imageOptions').style.display = mediaType === 'image' ? 'block' : 'none';
+            document.getElementById('videoOptions').style.display = mediaType === 'video' ? 'block' : 'none';
+        }
+
+        function setCustomBackground() {
+            const customBg = document.getElementById('customBgInput').value;
+            if (!customBg) return;
+
+            const mediaType = document.getElementById('mediaType').value;
+            const body = document.body;
+
+            // cleanup any previous backgrounds
+            cleanupBackgrounds();
+
+            // Clear body classes/styles
+            body.className = '';
+            body.style.backgroundImage = '';
+            body.style.removeProperty('--bg-image');
+
+            // Handle media based on selected type
+            if (mediaType === 'video') {
+                const video = document.createElement('video');
+                const fitMode = document.getElementById('videoFitMode').value;
+                video.className = `background-video video-fit-${fitMode}`;
+                video.src = customBg;
+                video.muted = document.getElementById('videoMuted').checked;
+                video.loop = document.getElementById('videoLoop').checked;
+                video.autoplay = true;
+                video.playsInline = true;
+
+                if (fitMode === 'blur') {
+                    const container = document.createElement('div');
+                    container.className = 'video-blur-container';
+
+                    const bgVideo = video.cloneNode(true);
+                    const bgContainer = document.createElement('div');
+                    bgContainer.className = 'video-blur-background';
+                    bgContainer.appendChild(bgVideo);
+                    container.appendChild(bgContainer);
+
+                    const fgVideo = video.cloneNode(true);
+                    const fgContainer = document.createElement('div');
+                    fgContainer.className = 'video-blur-foreground';
+                    fgContainer.appendChild(fgVideo);
+                    container.appendChild(fgContainer);
+
+                    body.appendChild(container);
+                } else {
+                    body.insertBefore(video, body.firstChild);
+                }
+
+                let overlay = document.querySelector('.overlay');
+                if (!overlay) {
+                    overlay = document.createElement('div');
+                    overlay.className = 'overlay';
+                    body.insertBefore(overlay, body.firstChild);
+                }
+
+                localStorage.setItem('background', 'video');
+                localStorage.setItem('customBg', customBg);
+                localStorage.setItem('videoFitMode', fitMode);
+                localStorage.setItem('videoMuted', video.muted);
+                localStorage.setItem('videoLoop', video.loop);
+            } else {
+                const fitMode = document.getElementById('imageFitMode').value;
+                body.className = `bg-custom fit-${fitMode}`;
+
+                if (fitMode === 'blur') {
+                    body.style.setProperty('--bg-image', `url('${customBg}')`);
+                } else {
+                    body.style.backgroundImage = `url('${customBg}')`;
+                }
+
+                localStorage.setItem('background', 'image');
+                localStorage.setItem('customBg', customBg);
+                localStorage.setItem('imageFitMode', fitMode);
+            }
+
+            // Remove active state from gradient options
+            document.querySelectorAll('.bg-option').forEach(opt => {
+                opt.classList.remove('active');
+            });
+        }
+
+
+        function saveSettings() {
+            localStorage.setItem('timerMode', timerMode);
+            localStorage.setItem('countdownDuration', countdownDuration / 60);
+        }
+
+        // Effect Settings Management
+        function loadEffectSettings() {
+            const savedSettings = localStorage.getItem('effectSettings');
+            if (savedSettings) {
+                effectSettings = JSON.parse(savedSettings);
+
+                // Update UI
+                document.getElementById('enableParticles').checked = effectSettings.enableParticles;
+                document.getElementById('enableNumberPops').checked = effectSettings.enableNumberPops;
+                document.getElementById('particleAmount').value = effectSettings.particleAmount;
+                document.getElementById('particleSpeed').value = effectSettings.particleSpeed;
+                document.getElementById('incrementColor').value = effectSettings.incrementColor;
+                document.getElementById('decrementColor').value = effectSettings.decrementColor;
+            }
+
+            // Add event listeners
+            document.getElementById('enableParticles').addEventListener('change', function (e) {
+                effectSettings.enableParticles = e.target.checked;
+                saveEffectSettings();
+            });
+
+            document.getElementById('enableNumberPops').addEventListener('change', function (e) {
+                effectSettings.enableNumberPops = e.target.checked;
+                saveEffectSettings();
+            });
+
+            document.getElementById('particleAmount').addEventListener('input', function (e) {
+                effectSettings.particleAmount = parseInt(e.target.value);
+                saveEffectSettings();
+            });
+
+            document.getElementById('particleSpeed').addEventListener('input', function (e) {
+                effectSettings.particleSpeed = parseInt(e.target.value);
+                saveEffectSettings();
+            });
+
+            document.getElementById('incrementColor').addEventListener('change', function (e) {
+                effectSettings.incrementColor = e.target.value;
+                saveEffectSettings();
+            });
+
+            document.getElementById('decrementColor').addEventListener('change', function (e) {
+                effectSettings.decrementColor = e.target.value;
+                saveEffectSettings();
+            });
+        }
+
+        function saveEffectSettings() {
+            localStorage.setItem('effectSettings', JSON.stringify(effectSettings));
+        }
+
+        function switchPresetTab(tabName) {
+            // Update tab buttons
+            document.querySelectorAll('.preset-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelector(`.preset-tab[onclick*="${tabName}"]`).classList.add('active');
+
+            // Update content sections
+            document.querySelectorAll('.preset-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.getElementById(`${tabName}Presets`).classList.add('active');
+        }
+
+        function loadSettings() {
+            const savedMode = localStorage.getItem('timerMode');
+            const savedCountdown = localStorage.getItem('countdownDuration');
+            const background = localStorage.getItem('background');
+            const customBg = localStorage.getItem('customBg');
+
+            // Load countdown duration
+            if (savedCountdown) {
+                countdownDuration = parseInt(savedCountdown) * 60;
+                document.getElementById('countdownDuration').value = savedCountdown;
+            }
+
+            // Load timer mode
+            if (savedMode && (savedMode === 'stopwatch' || savedMode === 'countdown')) {
+                timerMode = savedMode;
+                document.getElementById('timerMode').value = savedMode;
+
+                // Update UI based on timer mode
+                document.getElementById('countdownSettings').style.display = timerMode === 'countdown' ? 'block' : 'none';
+                document.getElementById('timerLabel').textContent = timerMode === 'countdown' ? 'COUNTDOWN TIMER' : 'FOCUS TIME';
+            }
+
+            // Load background settings
+            if (background) {
+                if (background === 'video' || background === 'image') {
+                    if (customBg) {
+                        document.getElementById('customBgInput').value = customBg;
+                        setCustomBackground();
+                    }
+                } else if (background.startsWith('bg-gradient')) {
+                    changeBackground(background);
+                }
+
+                if (timerMode === 'countdown') {
+                    document.getElementById('countdownSettings').style.display = 'block';
+                    document.getElementById('timerLabel').textContent = 'COUNTDOWN TIMER';
+                    timeLeft = countdownDuration;
+                    totalTime = countdownDuration;
+                } else {
+                    document.getElementById('timerLabel').textContent = 'FOCUS TIME';
+                }
+            }
+
+            // Load background
+            if (background === 'image' || background === 'video') {
+                if (customBg) {
+                    document.getElementById('customBgInput').value = customBg;
+
+                    if (background === 'video') {
+                        document.getElementById('mediaType').value = 'video';
+                        document.getElementById('videoFitMode').value = localStorage.getItem('videoFitMode') || 'cover';
+                        document.getElementById('videoMuted').checked = localStorage.getItem('videoMuted') === 'true';
+                        document.getElementById('videoLoop').checked = localStorage.getItem('videoLoop') === 'true';
+                    } else {
+                        document.getElementById('mediaType').value = 'image';
+                        document.getElementById('imageFitMode').value = localStorage.getItem('imageFitMode') || 'cover';
+                    }
+
+                    updateMediaOptions();
+                    setCustomBackground();
+                }
+            } else if (background) {
+                // Clear all existing classes and styles
+                document.body.className = '';
+                document.body.style.backgroundImage = '';
+                document.body.style.removeProperty('--bg-image');
+
+                // Add the saved background class directly
+                document.body.className = background;
+
+                // Update active state in the UI
+                document.querySelectorAll('.bg-option').forEach(opt => {
+                    if (opt.classList.contains(background)) {
+                        opt.classList.add('active');
+                    } else {
+                        opt.classList.remove('active');
+                    }
+                });
+            }
+        }        // Quote Functions
+        // Quote functions removed
+
+
+        // Keyboard Shortcuts
+        document.addEventListener('keydown', function (event) {
+            if (event.code === 'Space' && !document.activeElement.matches('input, textarea')) {
+                event.preventDefault();
+                toggleTimer();
+            }
+        });
+    </script>
+</body>
+
+</html>
